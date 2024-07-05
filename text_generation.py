@@ -1,6 +1,7 @@
 import os
 import requests
 
+# API URL of the selected GPT-2 model
 API_URL = "https://api-inference.huggingface.co/models/openai-community/gpt2"
 HUGGINGFACE_API_TOKEN = os.getenv("HUGGINGFACE_API_TOKEN")
 headers = {"Authorization": f"Bearer {HUGGINGFACE_API_TOKEN}"}
@@ -14,6 +15,7 @@ if __name__ == "__main__":
 
     prompt = input("Enter your input: ")
     
+    # Input the query and parameters for the model
     output = query({
         "inputs": prompt,
         "parameters": {
@@ -23,6 +25,7 @@ if __name__ == "__main__":
         }
     })
 
+    # Extract the generated text from the response JSON
     generated_text = output[0]['generated_text']
 
     print('Input:', prompt)
