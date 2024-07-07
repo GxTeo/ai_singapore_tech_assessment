@@ -1,5 +1,3 @@
-# ai_singapore_tech_assessment
-
 ### README for `text_generation.py`
 
 
